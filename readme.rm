@@ -1,0 +1,37 @@
+Install minikube
+minikube is an environment to run kubectl locally and test 
+
+Install kubectl
+
+start minikube
+    minikube start
+    minikube status
+
+getting information about pods
+    kubectl get pods
+    kubectl get deployment
+    kubectl get replicaset
+
+debugging pods
+    kubectl log [pod name]  
+
+    check on the state of the ReplicaSet:
+     kubectl describe [pod name]
+        
+    kubectl exec -it [pod's name e.g frontend-5f89j]  /bin/bash
+
+replicaset vs deployment
+
+    ReplicaSet
+        A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+         As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+        A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+         However, a Deployment is a higher-level concept that manages ReplicaSets and provides declarative updates to Pods along with a lot of other useful features. 
+
+
+deployment
+    kubectl apply -f deployment.yaml
+        or 
+    kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
+
