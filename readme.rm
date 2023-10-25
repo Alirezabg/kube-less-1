@@ -17,7 +17,7 @@ debugging pods
 
     check on the state of the ReplicaSet:
      kubectl describe [pod name]
-        
+
     kubectl exec -it [pod's name e.g frontend-5f89j]  /bin/bash
 
 replicaset vs deployment
@@ -35,3 +35,15 @@ deployment
         or 
     kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
 
+    checking the change will apply
+    kubectl diff -f ...
+
+configuration file has 3 parts
+    metadata
+    specification
+    status which is created by kubernetes, etcd record the configuration file 
+
+kubectl get deployment nginx-depl -o yaml >> file Name
+
+
+configMAP and Secret are to store env and credentials 

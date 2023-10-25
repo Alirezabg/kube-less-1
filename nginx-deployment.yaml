@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  #make connection between service and pods
   labels:
     app: nginx
 spec:
@@ -10,9 +11,11 @@ spec:
     matchLabels:
       app: nginx
   template:
+  # metadata for pods
     metadata:
       labels:
         app: nginx
+    # blueprint for each pod
     spec:
       containers:
         - name: nginx
